@@ -3,19 +3,17 @@ ESTABLISHED = 200
 
 class ConnectionEstablished:
     def __str__(self):
-        return 'Status Code: ' + str(self.__status) + ' ' + 'HTTP/HTTPS'
+        return 'Status Code: GET ' + str(self.status) + ' ' + 'HTTP/HTTPS'
 
-    def __init__(self, ping):
-        if ping is None:
-            ping = False
-
+    def __init__(self, ping = None):
         self.__ping = ping
         self.__status = NOT_FOUND
         self.__time = 1
+        self.__data = None
 
     @property
     def ping(self):
-            return self.__ping
+        return self.__ping
         
     @ping.setter
     def ping(self,value):

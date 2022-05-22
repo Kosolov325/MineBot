@@ -1,0 +1,5 @@
+{
+    "token":"your token goes here",
+    "api":"https://api.mcsrvstat.us/2/",
+    "prefix":"$"
+}

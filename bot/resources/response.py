@@ -1,13 +1,11 @@
-class Response():
-    def __init__(self, url, port):
-        if url is None:
-            url = ""
-        if port is None:
-            port = '25565'
+from .config import botconfig
 
+
+class Response():
+    def __init__(self, url = '', port = '25565'):
         self.__url = url
-        self.__port = ':' + port
-        self.__api = "https://api.mcsrvstat.us/2/"
+        self.__port = ":" + str(port)
+        self.__api = botconfig.api
         self.__msg = self.__api + self.__url + self.__port
     
     @property
@@ -33,3 +31,4 @@ class Response():
     @property
     def msg(self):
         return self.__msg
+
